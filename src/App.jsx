@@ -5,7 +5,7 @@ import Question from './components/Question';
 import Results from './components/Results';
 import UserForm from './components/UserForm';
 import { UserProvider } from './components/UserContext';
-import { CircularProgress } from '@material-ui/core'; 
+import HashLoader from "react-spinners/HashLoader";
 
 const questions = [
   "If you could have any superpower, what would it be?",
@@ -48,9 +48,9 @@ function App() {
     }
   }, [currentQuestionIndex]);
 
-  if (loading) {
-    return <CircularProgress />; // Show loading spinner when loading
-  }
+if (loading) {
+  return <HashLoader color={"cyan"} loading={true} size={50} />;
+}
 
   return (
     <Router>
