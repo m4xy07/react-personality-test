@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 const Question = ({ question, onAnswer, totalQuestions, currentQuestionIndex }) => {
   const [inputValue, setInputValue] = useState('');
 
-  const handleAnswer = () => {
-    onAnswer(inputValue);
-    setInputValue('');
-  };
+const handleAnswer = () => {
+  onAnswer(inputValue);
+  setInputValue('');
+};
 
   const buttonText = currentQuestionIndex === totalQuestions - 1 ? 'Submit Quiz' : 'Next';
 
@@ -18,7 +18,7 @@ const Question = ({ question, onAnswer, totalQuestions, currentQuestionIndex }) 
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          className="w-full p-2 pl-10 text-sm text-gray-700"
+          className="w-full p-2 pl-10 text-sm text-white"
         />
        <button
           onClick={handleAnswer}

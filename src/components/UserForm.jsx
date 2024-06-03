@@ -15,7 +15,7 @@ const UserForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 pt-6">
-      <label htmlFor="name" className="block text-gray-700">
+      <label htmlFor="name" className="block text-white">
         Enter your name:
       </label>
       <input
@@ -23,7 +23,7 @@ const UserForm = () => {
         id="name"
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
-        className="w-full p-2 pl-10 text-sm text-gray-700"
+        className="w-full p-2 pl-10 text-sm text-white"
       />
       <button
         type="submit"

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Header from './components/Header';
 import Question from './components/Question';
 import Results from './components/Results';
 import UserForm from './components/UserForm';
 import { UserProvider } from './components/UserContext';
+
 import HashLoader from "react-spinners/HashLoader";
 
 const questions = [
@@ -33,9 +35,11 @@ function App() {
 
 
   const handleAnswer = (answer) => {
-    setAnswers([...answers, answer]);
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-  };
+  console.log('Before update:', answers, currentQuestionIndex);
+  setAnswers([...answers, answer]);
+  setCurrentQuestionIndex(currentQuestionIndex + 1);
+  console.log('After update:', answers, currentQuestionIndex);
+};
 
   const handleUserFormSubmit = (name) => {
     setUserName(name);
@@ -60,7 +64,7 @@ if (loading) {
       <UserProvider value={{ name: userName, setName: setUserName }}>
         <Routes>
           <Route path="/" element={<UserForm />} />
-          <Route path="/quiz" element={<Question handleAnswer={handleAnswer} totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />} />
+          <Route path="/quiz" element={<Question question={questions[currentQuestionIndex]} onAnswer={handleAnswer} totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />} />
           <Route path="/results" element={<Results />} />
         </Routes>
       </UserProvider>
