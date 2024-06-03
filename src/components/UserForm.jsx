@@ -23,11 +23,11 @@ const UserForm = () => {
         id="name"
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
-        className="w-full p-2 pl-10 text-sm text-white"
+        className="w-full p-2 pl-10 text-sm text-white mt-4"
       />
       <button
         type="submit"
-        className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-5"
       >
         Start Quiz
       </button>

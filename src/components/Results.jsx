@@ -9,20 +9,21 @@ const Results = () => {
   const [personality, setLocalPersonality] = useState(null);
 
   useEffect(() => {
-    const predefinedPrompt = "Create a superhero image using this descriptive analysis: ";
-    const prompt = predefinedPrompt + answers.join(' ');
+  const predefinedPrompt = "Create a superhero image using this descriptive analysis: ";
+  const formattedAnswers = answers.map((answer, index) => `Question ${index + 1}: ${questions[index]}, Answer: ${answer}`).join(' ');
+  const prompt = predefinedPrompt + formattedAnswers;
 
-    generateImage(prompt)
-      .then(setImageUrl)
-      .catch(console.error);
+  generateImage(prompt)
+    .then(setImageUrl)
+    .catch(console.error);
 
-    generateSuperheroNameAndPersonality(prompt)
-      .then(result => {
-        setSuperheroName(result.superheroName);
-        setPersonality(result.personality);
-      })
-      .catch(console.error);
-  }, [answers]);
+  generateSuperheroNameAndPersonality(prompt)
+    .then(result => {
+      setSuperheroName(result.superheroName);
+      setPersonality(result.personality);
+    })
+    .catch(console.error);
+}, [answers]);
 
   return (
     <div className="max-w-md mx-auto p-4 pt-6">
