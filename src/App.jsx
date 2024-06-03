@@ -29,6 +29,8 @@ function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [userName, setUserName] = useState('');
+  const [loading, setLoading] = useState(false);
+
 
   const handleAnswer = (answer) => {
     setAnswers([...answers, answer]);
