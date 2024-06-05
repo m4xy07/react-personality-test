@@ -1,4 +1,4 @@
-import { TextServiceClient } from "@google-ai/generativelanguage.v1beta2";
+import { TextServiceClient } from "@google-ai/generativelanguage";
 import { GoogleAuth } from "google-auth-library";
 
 const MODEL_NAME = "models/text-bison-001";
