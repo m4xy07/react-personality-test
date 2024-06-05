@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { UserContext } from './UserContext';
 import { generateImage } from  '../api/imagegen';
+import { generateSuperheroNameAndPersonality } from  '../api/googleAI';
 
 const Results = () => {
   const { name, answers, setPersonality } = React.useContext(UserContext);
